@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 // import axios from 'axios';
+import MapLeaflet from './components/map';
 
 function App() {
   /*const config = {
@@ -17,6 +18,9 @@ function App() {
   return (
     <div className="App">
       <h1>Application</h1>
+      <div class="map">
+        <MapLeaflet />
+      </div>
       <ul>
         { books.map((book, i) =>
             <li key={i}>{ book }</li>
