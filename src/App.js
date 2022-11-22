@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
 // import axios from 'axios';
-import MapLeaflet from './components/map';
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from './components/AppRouter';
+import { NavLink } from "react-router-dom";
 
 function App() {
   /*const config = {
@@ -16,18 +18,16 @@ function App() {
   const books = [];
 
   return (
-    <div className="App">
-      <h1>Application</h1>
-      <div class="map">
-        <MapLeaflet />
+    <BrowserRouter>
+      <div className="App">
+        <h1>Application</h1>
+        <nav>
+          <NavLink to="/">Map</NavLink><br />
+          <NavLink to="/login">Connexion</NavLink>
+        </nav>
+        <AppRouter />
       </div>
-      <ul>
-        { books.map((book, i) =>
-            <li key={i}>{ book }</li>
-          )
-        }
-      </ul>
-    </div>
+    </BrowserRouter>
   );
 }
 

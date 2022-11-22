@@ -1,4 +1,3 @@
-//import "./styles.css";
 import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -27,8 +26,7 @@ export default function MapLeaflet() {
     return position === null ? null : (
       <Marker position={position} icon={icon}>
         <Popup>
-          You are here. <br />
-          Map bbox: <br />
+          Vous êtes ici : <br />
           <b>Southwest lng</b>: {bbox[0]} <br />
           <b>Southwest lat</b>: {bbox[1]} <br />
           <b>Northeast lng</b>: {bbox[2]} <br />
@@ -39,17 +37,19 @@ export default function MapLeaflet() {
   }
 
   return (
-    <MapContainer
-      center={[47.658236, -2.760847]}
-      zoom={13}
-      scrollWheelZoom
-      style={{ height: "50vh" }}
-    >
-      <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <LocationMarker />
-    </MapContainer>
+    <div class="map">
+      <MapContainer
+        center={[47.658236, -2.760847]}
+        zoom={13}
+        scrollWheelZoom
+        style={{ height: "50vh" }}
+      >
+        <TileLayer
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <LocationMarker />
+      </MapContainer>
+    </div>
   );
 }
